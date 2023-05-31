@@ -1,6 +1,6 @@
 package com.platzi.market.domein;
 
-public class Product {
+public class Product {  //traduccion de mi clase PRODUCTO
     private int productId;
     private String name;
     private int categoryId;

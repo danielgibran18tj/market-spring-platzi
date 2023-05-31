@@ -1,6 +1,6 @@
 package com.platzi.market.domein;
 
-public class Category {
+public class Category { //TRADUCCION DE MI CLASE CATEGORIA
     private int categoryId;
     private String category;
     private boolean active;

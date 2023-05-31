@@ -1,11 +1,9 @@
 package com.platzi.market.domein.repository;
-
 import com.platzi.market.domein.Product;
-import com.platzi.market.persistence.entity.Producto;
-
 import java.util.List;
 import java.util.Optional;
 
+//TRADUCCION DE NUESTRA CLASE ProductoRepository
 public interface ProductRepository {    //reglas que va a tener nuestro dominio
     List<Product> getAll();
     Optional<List<Product>> getByCategory(int categoryId);
