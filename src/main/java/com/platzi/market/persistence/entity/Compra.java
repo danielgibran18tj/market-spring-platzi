@@ -25,7 +25,7 @@ public class Compra {
     private Cliente cliente;
 
     //relacionandonos con ComprasProducto
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
 

@@ -19,10 +19,11 @@ public interface PurchaseMapper {
                 @Mapping(source = "fecha", target = "date"),
                 @Mapping(source = "medioPago", target = "paymentMethod"),
                 @Mapping(source = "comentario", target = "comment"),
+                @Mapping(source = "estado", target = "state"),
                 @Mapping(source = "productos", target = "items")
         })
         Purchase toPurchase(Compra compra);
-        List<Purchase> toPurhcases(List<Compra> compras);
+        List<Purchase> toPurchases(List<Compra> compras);
 
         @InheritInverseConfiguration    //utilice de manera inversa el mapping anterior
         @Mapping(target = "cliente", ignore = true)

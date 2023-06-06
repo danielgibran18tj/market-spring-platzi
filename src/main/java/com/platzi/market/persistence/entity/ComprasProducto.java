@@ -14,6 +14,7 @@ public class ComprasProducto {
 
     @ManyToOne  //relacion de muchos a uno
     //@JoinColumn(name = "id_compra" seniala la llave primaria de compra, con la que nos estamos relacionando
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false) //no insertar, no actualizar
     private Compra compra;
     @ManyToOne  //relacion de muchos a uno
