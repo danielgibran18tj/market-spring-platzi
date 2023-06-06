@@ -11,7 +11,8 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoryMapper.class})  //importante senialar el componente de tipo string
+@Mapper(componentModel = "spring", uses = {CategoryMapper.class})  //importante senialar el componente de tipo spring
+//mirandolo de otra forma "CategoryMapper.class" se coloca por el modelo de datos, el diagrama
 public interface ProductMapper {
     @Mappings({
             @Mapping(source = "idProducto", target = "productId"),

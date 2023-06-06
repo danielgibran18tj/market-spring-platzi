@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")  //importante senialar el componente de tipo string
+@Mapper(componentModel = "spring")  //importante senialar el componente de tipo spring
 public interface CategoryMapper {
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoryId"),      //fuente / destino
