@@ -1,6 +1,6 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity     //indica que esta clase mapeara las tablas de la base de datos
 @Table(name = "productos")  //se incluye cuando la clase se llama diferente a la tabla original de base de datos
