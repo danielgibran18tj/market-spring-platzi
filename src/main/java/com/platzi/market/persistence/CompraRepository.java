@@ -22,7 +22,6 @@ public class CompraRepository implements PurchaseRepository {
         List<Compra> compras = (List<Compra>) compraCrupRepository.findAll();
         return mapper.toPurchases(compras);
     }
-
     @Override
     public Optional<List<Purchase>> getByClient(String clientId) {
         /*return compraCrupRepository.findByIdCliente(clientId)

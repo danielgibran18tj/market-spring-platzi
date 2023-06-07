@@ -2,6 +2,10 @@ package com.platzi.market.web.controler;
 
 import com.platzi.market.domein.Product;
 import com.platzi.market.domein.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +21,20 @@ public class ProductController {
     private ProductService productService;//inyeccion de servicio
 
     @GetMapping("/all")     //http://localhost:8090/platzi-market/api/products/all
+    @ApiOperation("Get all supermarket products")   //modificar visualizacion en documentacion con Swagger
+    @ApiResponse(code = 200, message = "OK")    //modificacion para Swagger
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK); //respondio de manera adecuada cuando fue llamada
     }
 
     @GetMapping("/{id}")    //http://localhost:8090/platzi-market/api/products/10
-    public ResponseEntity<Product> getProduct(@PathVariable("id") int productId){   //con ResponseEntity ya no es necesario Optional<Product>
+    @ApiOperation("Search a product with an ID")    //modificacion para Swagger
+    @ApiResponses({         //modificacion para Swagger
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Product not found")
+    })
+    public ResponseEntity<Product> getProduct(@ApiParam(value = "The id of the product", required = true, example = "7")   ////modificacion para Swagger
+                                              @PathVariable("id") int productId){   //con ResponseEntity ya no es necesario Optional<Product>
         return productService.getProduct(productId)
                 .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));    //en caso que no exista un producto, no respondera NULL sino NOT_FOUND
